@@ -1,0 +1,107 @@
+<resources>
+    <string name="app_name">Kata Kerja Admin</string>
+    <string name="app_version">Version %1$s</string>
+    <string name="copyright">Copyright© %1$d Kata Kerja</string>
+
+    <!--  ON BOARDING  -->
+    <string name="title_ob1">Cari Buku Favoritmu</string>
+    <string name="title_ob2">Lihat Jadwal\nPengembalian Buku</string>
+    <string name="title_ob3">Perluas Wawasanmu\nBersama KataKerja</string>
+    <string name="desc_ob1">Cari buku favoritmu dari 1530+\nkoleksi buku di Perpustakaan KataKerja </string>
+    <string name="desc_ob2">Kembalikan buku tepat waktu dengan\nmelihat jadwal pengembalian buku</string>
+    <string name="desc_ob3">Bergabung menjadi member KataKerja\nPerluas wawasanmu dengan\n1350+ koleksi buku</string>
+    <string name="skip">Skip</string>
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+
+    <!--  BOTTOM NAV MENU  -->
+    <string name="title_home">Home</string>
+    <string name="title_book">Book</string>
+    <string name="title_wishlist">Wishlist</string>
+    <string name="title_unverified">Unverified</string>
+t
+    <!--  HOME  -->
+    <string name="hello">Hello,</string>
+    <string name="has_read">Telah Dibaca</string>
+    <string name="borrowed">Buku Dipinjam</string>
+    <string name="borrowing">Sedang Dipinjam</string>
+    <string name="missing">Hilang</string>
+    <string name="turn_back_before">DL: %1$s</string>
+    <string name="read_date">%1$s</string>
+
+    <!--  BOOK  -->
+    <string name="newest_book">Buku Terbaru</string>
+    <string name="popular_books">Buku Popular</string>
+    <string name="search_hint">Cari buku untuk dipinjam…</string>
+    <string name="your_wishlist">Wishlist Kamu</string>
+    <string name="stock">Stok : %1$d buku</string>
+    <string name="detail_buku">Detail Buku</string>
+    <string name="category">Kategori</string>
+    <string name="year">Tahun</string>
+    <string name="isbn">ISBN</string>
+    <string name="publisher">Penerbit</string>
+    <string name="book_desc">Deskripsi Buku</string>
+    <string name="empty_borrows">Kamu belum pernah meminjam buku.</string>
+
+
+    <!-- WISHLIST -->
+    <string name="empty_wishlist">Kamu belum menambahkan buku \napapun ke wishlist.</string>
+
+    <!--  PROFILE  -->
+    <string name="joined_since">Bergabung sejak %1$s</string>
+    <string name="edit_profile">Edit Profil</string>
+    <string name="change_password">Ganti Password</string>
+    <string name="setting">Pengaturan</string>
+    <string name="about_us">Tentang Kami</string>
+    <string name="logout">Log Out</string>
+    <string name="title_profile">Profile</string>
+
+    <!--  EDIT PROFILE  -->
+    <string name="name">Nama</string>
+    <string name="full_address">Alamat Lengkap</string>
+    <string name="born_date">Tanggal Lahir</string>
+    <string name="email">Email</string>
+    <string name="phone_number">No. Telp</string>
+    <string name="update">Update</string>
+
+    <!--  CHANGE PASSWORD -->
+    <string name="old_password">Password Lama</string>
+    <string name="new_password">Password Baru</string>
+    <string name="confirm_new_password">Konfirmasi Password Baru</string>
+
+    <!--  SETTING AND ABOUT -->
+    <string name="night_mode">Mode Malam</string>
+    <string name="see_oss_license">Lihat lisensi open source</string>
+
+    <!--  CONTENT DESCRIPTION  -->
+    <string name="cd_avatar">Avatar</string>
+    <string name="cd_illustration">Illustrasi</string>
+    <string name="cd_button_add_avatar">Tombol Tambah Avatar</string>
+    <string name="cd_logo">Logo</string>
+    <string name="desc_acc_unverified">Silahkan Meminta Konfirmasi Member \ndari Staff Kata Kerja</string>
+    <string name="visit_katakerja">Kunjungi Kata Kerja</string>
+
+    <!-- LOGIN -->
+    <string name="login_title">Selamat Datang Kembali!</string>
+    <string name="login_desc">Silakan login ke aplikasi KataKerja</string>
+    <string name="password">Password</string>
+    <string name="forgot_password">Lupa Password?</string>
+    <string name="log_in">Log In</string>
+    <string name="or">atau</string>
+    <string name="log_in_with_google">Log In dengan Google</string>
+    <string name="login_to_register">Belum punya akun? Sign Up</string>
+    <string name="error_empty_edit_text">Tidak boleh dikosongkan</string>
+    <string name="error_email_format">Email tidak sesuai format</string>
+    <string name="error_password_format">Password \u003C 6 karakter</string>
+
+    <!--  REGISTER  -->
+    <string name="register_title">Buat Akun Baru</string>
+    <string name="register_desc">Silakan buat akun baru</string>
+    <string name="register_to_login">Sudah punya akun? Log In</string>
+    <string name="register_with_google">Sign Up dengan Google</string>
+    <string name="register_btn">Sign Up</string>
+    <string name="share">Share</string>
+    <string name="please_login">Registrasi berhasil! Silakan login terlebih dahulu.</string>
+    <string name="success_update">Success Update Data</string>
+
+</resources>

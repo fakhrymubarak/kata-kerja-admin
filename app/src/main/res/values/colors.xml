@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="blue">#015593</color>
+    <color name="blue_variant">#0C4C7C</color>
+    <color name="salmon">#FD8763</color>
+    <color name="salmon_variant">#CC522D</color>
+    <color name="blue_soft">#E6F1F3</color>
+
+    <color name="warning">#FFECB43A</color>
+    <color name="danger">#FFFF463F</color>
+    <color name="success">#FF2ABA4C</color>
+
+    <color name="transparent">#00000000</color>
+    <color name="black">#FF000000</color>
+    <color name="gray">#FF333333</color>
+    <color name="gray_light">#BBBBBB</color>
+    <color name="white">#FFFFFFFF</color>
+
+</resources>

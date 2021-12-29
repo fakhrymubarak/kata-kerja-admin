@@ -1,0 +1,141 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.KataKerjaApps" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/blue</item>
+        <item name="colorPrimaryVariant">@color/white</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/salmon</item>
+        <item name="colorSecondaryVariant">@color/salmon_variant</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="n">true</item>
+        <!-- Customize your theme here. -->
+    </style>
+
+
+    <!--  Splash Screen Theme-->
+    <style name="SplashTheme" parent="Theme.KataKerjaApps">
+        <item name="android:windowBackground">@drawable/layer_splash_bg</item>
+    </style>
+
+
+    <!--  TEXT STYLES  -->
+    <style name="TextStyles" parent="Widget.AppCompat.TextView" />
+
+    <style name="TextStyles.PoppinsExtraExtraLarge">
+        <item name="android:fontFamily">@font/poppins_semibold</item>
+        <item name="android:textSize">@dimen/font_monster</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="TextStyles.PoppinsLarge">
+        <item name="android:fontFamily">@font/poppins_semibold</item>
+        <item name="android:textSize">@dimen/font_large</item>
+    </style>
+
+    <style name="TextStyles.PoppinsLarge.Black">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="TextStyles.PoppinsLarge.Blue">
+        <item name="android:textColor">@color/blue</item>
+    </style>
+
+    <style name="TextStyles.PoppinsMedium">
+        <item name="android:fontFamily">@font/poppins</item>
+        <item name="android:textSize">@dimen/font_medium</item>
+    </style>
+
+    <style name="TextStyles.PoppinsMedium.Black">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="TextStyles.PoppinsRegular">
+        <item name="android:fontFamily">@font/poppins</item>
+        <item name="android:textSize">@dimen/font_regular</item>
+    </style>
+
+    <style name="TextStyles.PoppinsRegular.Black">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="TextStyles.PoppinsRegular.Gray">
+        <item name="android:textColor">@color/gray</item>
+    </style>
+
+    <style name="TextStyles.PoppinsSmall">
+        <item name="android:fontFamily">@font/poppins</item>
+        <item name="android:textSize">@dimen/font_small</item>
+        <item name="android:textColor">@color/gray</item>
+    </style>
+
+
+    <style name="TextStyles.PoppinsSmall.Black">
+        <item name="android:textColor">@color/gray</item>
+    </style>
+
+
+    <!--  BUTTON STYLES -->
+    <style name="Button" parent="Widget.AppCompat.Button.Borderless">
+        <item name="android:textAllCaps">false</item>
+        <item name="android:fontFamily">@font/poppins</item>
+        <item name="android:foreground">?android:attr/selectableItemBackgroundBorderless</item>
+    </style>
+
+    <style name="Button.Transparent">
+        <item name="android:background">@null</item>
+        <item name="android:textColor">@color/salmon</item>
+    </style>
+
+    <style name="Button.Transparent.Wishlist">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:drawableStart">@drawable/ic_add_dark</item>
+    </style>
+
+    <style name="Button.Transparent.Share">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:drawableStart">@drawable/ic_share_dark</item>
+    </style>
+
+    <style name="Button.Primary">
+        <item name="android:background">@drawable/shape_rec_fill_blue</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Button.Secondary">
+        <item name="android:background">@drawable/shape_rec_outline_blue</item>
+        <item name="android:textColor">@color/blue</item>
+    </style>
+
+    <style name="Button.Secondary.GrayLight">
+        <item name="android:background">@drawable/shape_rec_outline_gray_light</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textAlignment">textStart</item>
+    </style>
+
+    <!--TEXT INPUT-->
+    <style name="TextInput" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+        <item name="boxStrokeColor">@color/selector_text_input_box_stroke</item>
+        <item name="android:layout_marginStart">16dp</item>
+        <item name="android:layout_marginEnd">16dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="shapeAppearance">@style/ShapeRounded</item>
+    </style>
+
+    <style name="TextInputEdit">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/poppins</item>
+        <item name="android:textSize">@dimen/font_regular</item>
+    </style>
+
+    <style name="ShapeRounded" parent="ShapeAppearance.MaterialComponents.SmallComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">@dimen/radius_btn</item>
+    </style>
+
+</resources>

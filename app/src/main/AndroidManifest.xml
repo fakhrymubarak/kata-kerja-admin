@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.katakerja.admin">
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:name="com.katakerja.admin.KataKerjaApps"
+        android:allowBackup="true"
+        android:fullBackupOnly="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.KataKerjaApps"
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name="com.katakerja.admin.ui.login.LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.katakerja.admin.ui.register.RegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.katakerja.admin.ui.profile.ProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.katakerja.admin.ui.dashboard.book.details.BookDetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.katakerja.admin.ui.onboarding.OnBoardingActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.katakerja.admin.ui.dashboard.MainActivity"
+            android:exported="true" />
+        <activity
+            android:name="com.katakerja.admin.SplashScreenActivity"
+            android:exported="true"
+            android:theme="@style/SplashTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

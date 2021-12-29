@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.katakerja.admin.ui.dashboard.home.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_unverified"
+            app:destination="@id/navigation_unverified"
+            app:launchSingleTop="true"
+            app:popUpTo="@+id/mobile_navigation"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_book"
+        android:name="com.katakerja.admin.ui.dashboard.book.BookFragment"
+        android:label="@string/title_book"
+        tools:layout="@layout/fragment_book" />
+
+    <fragment
+        android:id="@+id/navigation_members"
+        android:name="com.katakerja.admin.ui.dashboard.wishlist.WishlistFragment"
+        android:label="@string/title_wishlist"
+        tools:layout="@layout/fragment_wishlist" />
+
+    <fragment
+        android:id="@+id/navigation_unverified"
+        android:name="com.katakerja.admin.ui.dashboard.unverified.UnverifiedFragment"
+        android:label="@string/title_unverified"
+        tools:layout="@layout/fragment_unverified">
+        <action
+            android:id="@+id/action_navigation_unverified_to_navigation_home"
+            app:destination="@id/navigation_home" />
+    </fragment>
+</navigation>
