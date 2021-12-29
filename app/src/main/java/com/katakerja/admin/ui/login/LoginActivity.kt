@@ -16,7 +16,6 @@ import com.katakerja.admin.helper.FormValidator.editTextIsNotEmpty
 import com.katakerja.admin.helper.FormValidator.emailFormatMatched
 import com.katakerja.admin.helper.FormValidator.passwordFormatMatched
 import com.katakerja.admin.ui.dashboard.MainActivity
-import com.katakerja.admin.ui.register.RegisterActivity
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -43,7 +42,6 @@ class LoginActivity : AppCompatActivity() {
                     this@LoginActivity.window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN)
                 }
             }
-            tvRegister.setOnClickListener { intentTo(RegisterActivity::class.java) }
         }
     }
 
@@ -53,8 +51,18 @@ class LoginActivity : AppCompatActivity() {
                 when (loginData) {
                     is Resource.Loading -> setLoading(true)
                     is Resource.Success -> {
-                        loginData.data?.let { data -> setDataStore(data) }
-                        intentTo(MainActivity::class.java)
+                        loginData.data?.let { data ->
+                            if (data.idRole < 3) {
+                                setDataStore(data)
+                                intentTo(MainActivity::class.java)
+                            } else {
+                                Toast.makeText(
+                                    this,
+                                    getString(R.string.not_staff),
+                                    Toast.LENGTH_LONG
+                                ).show()
+                            }
+                        }
                         setLoading(false)
                     }
                     is Resource.Error -> {
@@ -95,7 +103,6 @@ class LoginActivity : AppCompatActivity() {
                 )
             }
         }
-
     }
 
     private fun <T> intentTo(destination: Class<T>) {

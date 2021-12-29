@@ -1,4 +1,4 @@
-package com.katakerja.admin.ui.onboarding
+package com.katakerja.admin.ui.splash
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel

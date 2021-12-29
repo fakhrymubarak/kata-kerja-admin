@@ -1,4 +1,4 @@
-package com.katakerja.admin
+package com.katakerja.admin.ui.splash
 
 import android.content.Intent
 import android.os.Bundle
@@ -8,8 +8,7 @@ import androidx.appcompat.app.AppCompatDelegate
 import androidx.preference.PreferenceManager
 import com.katakerja.admin.const.Settings
 import com.katakerja.admin.ui.dashboard.MainActivity
-import com.katakerja.admin.ui.onboarding.OnBoardingActivity
-import com.katakerja.admin.ui.onboarding.OnBoardingViewModel
+import com.katakerja.admin.ui.login.LoginActivity
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -30,7 +29,7 @@ class SplashScreenActivity : AppCompatActivity() {
             if (userId != 0) {
                 intentTo(MainActivity::class.java)
             } else {
-                intentTo(OnBoardingActivity::class.java)
+                intentTo(LoginActivity::class.java)
             }
         })
     }

@@ -103,5 +103,6 @@ t
     <string name="share">Share</string>
     <string name="please_login">Registrasi berhasil! Silakan login terlebih dahulu.</string>
     <string name="success_update">Success Update Data</string>
+    <string name="not_staff">Ups! Kamu bukan staff!</string>
 
 </resources>

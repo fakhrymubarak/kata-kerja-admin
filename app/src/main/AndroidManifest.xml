@@ -17,22 +17,16 @@
             android:name="com.katakerja.admin.ui.login.LoginActivity"
             android:exported="false" />
         <activity
-            android:name="com.katakerja.admin.ui.register.RegisterActivity"
-            android:exported="false" />
-        <activity
             android:name="com.katakerja.admin.ui.profile.ProfileActivity"
             android:exported="false" />
         <activity
             android:name="com.katakerja.admin.ui.dashboard.book.details.BookDetailsActivity"
             android:exported="false" />
         <activity
-            android:name="com.katakerja.admin.ui.onboarding.OnBoardingActivity"
-            android:exported="false" />
-        <activity
             android:name="com.katakerja.admin.ui.dashboard.MainActivity"
             android:exported="true" />
         <activity
-            android:name="com.katakerja.admin.SplashScreenActivity"
+            android:name="com.katakerja.admin.ui.splash.SplashScreenActivity"
             android:exported="true"
             android:theme="@style/SplashTheme">
             <intent-filter>
