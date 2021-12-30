@@ -130,7 +130,6 @@ class EditProfileFragment : Fragment(R.layout.fragment_edit_profile) {
         }
     }
 
-
     private fun setLoading(state: Boolean) {
         enableBtnLogin(state)
         binding.pbUpdate.visibility = if (state) View.VISIBLE else View.GONE

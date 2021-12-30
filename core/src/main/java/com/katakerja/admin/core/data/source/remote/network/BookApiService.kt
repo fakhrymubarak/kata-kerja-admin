@@ -1,5 +1,6 @@
 package com.katakerja.admin.core.data.source.remote.network
 
+import com.katakerja.admin.core.data.source.remote.response.book.AddBookResponse
 import com.katakerja.admin.core.data.source.remote.response.book.borrow.BorrowedBooksResponse
 import com.katakerja.admin.core.data.source.remote.response.book.details.BookDetailsResponse
 import com.katakerja.admin.core.data.source.remote.response.book.search.ListBooksResponse
@@ -9,6 +10,22 @@ import com.katakerja.admin.core.data.source.remote.response.book.wishlist.store.
 import retrofit2.http.*
 
 interface BookApiService {
+    /* List Borrowed Book */
+    @FormUrlEncoded
+    @POST("books/store")
+    suspend fun addBook(
+        @Header("Authorization") authToken: String,
+        @Field("isbn") isbn: String,
+        @Field("judul") title: String,
+        @Field("author") author: String,
+        @Field("foto_buku") imgCover: String,
+        @Field("tahun_terbit") releaseYear: Int,
+        @Field("penerbit") publisher: String,
+        @Field("kategori") category: String,
+        @Field("stock") stock: Int,
+        @Field("deskripsi") description: String,
+    ): AddBookResponse
+
     /* List Borrowed Book */
     @GET("borrow/show/user/{id}")
     suspend fun getBorrowedBooksById(
@@ -46,7 +63,6 @@ interface BookApiService {
         @Field("user_id") userId: Int,
         @Field("book_id") bookId: Int,
     ): StoreWishlistResponse
-
 
     /* Wishlist Book*/
     @DELETE("wish/delete/{id}")

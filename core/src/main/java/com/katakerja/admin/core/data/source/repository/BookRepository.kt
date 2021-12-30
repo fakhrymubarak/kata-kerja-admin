@@ -18,6 +18,35 @@ import javax.inject.Singleton
 class BookRepository @Inject constructor(
     private val remoteBookDataSource: RemoteBookDataSource,
 ) : IBookRepository {
+    override fun addBook(
+        authToken: String, isbn: String, title: String, author: String, imgCover: String,
+        releaseYear: Int, publisher: String, category: String, stock: Int, description: String
+    ): Flow<Resource<Nothing>> =
+        flow {
+            emit(Resource.Loading())
+            when (val apiResponse = remoteBookDataSource.addBook(
+                authToken = authToken,
+                isbn = isbn,
+                title = title,
+                author = author,
+                imgCover = imgCover,
+                releaseYear = releaseYear,
+                publisher = publisher,
+                category = category,
+                stock = stock,
+                description = description,
+            ).first()) {
+                is ApiResponse.Success -> {
+                    emit(Resource.Error("Berhasil menambahkan buku."))
+                }
+                is ApiResponse.Error -> {
+                    emit(Resource.Error(apiResponse.errorMessage))
+                }
+                is ApiResponse.Empty -> {}
+
+            }
+        }
+
 
     override fun getBorrowedBooksById(idUser: Int): Flow<Resource<List<BorrowedBook>>> =
         flow {

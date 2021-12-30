@@ -1,5 +1,6 @@
 package com.katakerja.admin.core.helper
 
+import com.katakerja.admin.core.data.source.remote.response.book.BookData
 import com.katakerja.admin.core.data.source.remote.response.book.borrow.BorrowedBooksData
 import com.katakerja.admin.core.data.source.remote.response.book.details.BookDetailsData
 import com.katakerja.admin.core.data.source.remote.response.book.search.SearchedBookData
@@ -63,6 +64,20 @@ object BookDataMapper {
                 stock = wishlistBook.stock,
                 cover = wishlistBook.fotoBuku,
                 category = wishlistBook.kategori,
+            )
+
+        fun mapResponseToDomain(bookData: BookData): BookDomain  =
+            BookDomain(
+                idBook = bookData.id,
+                isbn = bookData.isbn,
+                title = bookData.judul,
+                description = bookData.deskripsi,
+                author = bookData.author,
+                publisher = bookData.penerbit,
+                releaseYear = bookData.tahunTerbit.toString(),
+                stock = bookData.stock,
+                cover = bookData.fotoBuku,
+                category = bookData.kategori,
             )
 
     }

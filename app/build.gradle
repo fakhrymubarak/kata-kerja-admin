@@ -76,4 +76,8 @@ dependencies {
 
     //shimmer
     implementation "com.facebook.shimmer:shimmer:0.5.0"
+
+    // image picker
+    implementation 'com.github.dhaval2404:imagepicker:2.1'
+    implementation 'com.karumi:dexter:6.2.2'
 }

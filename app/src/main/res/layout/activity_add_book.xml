@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:clipToPadding="false"
@@ -88,13 +87,28 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_title"
+            style="@style/TextInput"
+            android:layout_marginTop="16dp"
+            android:hint="@string/book_title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/til_isbn">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_title"
+                style="@style/TextInputEdit"
+                android:inputType="textCapWords" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/til_author"
             style="@style/TextInput"
             android:layout_marginTop="16dp"
             android:hint="@string/author"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/til_isbn">
+            app:layout_constraintTop_toBottomOf="@+id/til_title">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/et_author"
@@ -176,7 +190,7 @@
                 style="@style/TextInputEdit"
                 android:gravity="top|start"
                 android:inputType="textMultiLine"
-                android:minLines="10"
+                android:minLines="5"
                 android:scrollbars="vertical" />
         </com.google.android.material.textfield.TextInputLayout>
 

@@ -109,5 +109,8 @@
     <string name="release_year">Tahun Terbit</string>
     <string name="description">Deskripsi</string>
     <string name="stock">Stock</string>
+    <string name="book_title">Judul Buku</string>
+    <string name="failed_access_camera">Gagal mengakses kamera</string>
+    <string name="title_member">Members</string>
 
 </resources>

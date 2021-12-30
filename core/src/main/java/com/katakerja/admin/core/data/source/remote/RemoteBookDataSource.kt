@@ -2,6 +2,7 @@ package com.katakerja.admin.core.data.source.remote
 
 import com.katakerja.admin.core.data.source.remote.network.ApiResponse
 import com.katakerja.admin.core.data.source.remote.network.BookApiService
+import com.katakerja.admin.core.data.source.remote.response.book.BookData
 import com.katakerja.admin.core.data.source.remote.response.book.borrow.DataResponseItem
 import com.katakerja.admin.core.data.source.remote.response.book.details.BookDetailsData
 import com.katakerja.admin.core.data.source.remote.response.book.search.SearchedBookData
@@ -17,6 +18,35 @@ import javax.inject.Singleton
 
 @Singleton
 class RemoteBookDataSource @Inject constructor(private val bookApiService: BookApiService) {
+    fun addBook(
+        authToken: String, isbn: String, title: String, author: String, imgCover: String,
+        releaseYear: Int, publisher: String, category: String, stock: Int, description: String
+    ): Flow<ApiResponse<BookData>> =
+        flow {
+            try {
+                val response = bookApiService.addBook(
+                    authToken = authToken,
+                    isbn = isbn,
+                    title = title,
+                    author = author,
+                    imgCover = imgCover,
+                    releaseYear = releaseYear,
+                    publisher = publisher,
+                    category = category,
+                    stock = stock,
+                    description = description,
+                )
+                if (response.success) {
+                    emit(ApiResponse.Success(response.bookData))
+                } else {
+                    emit(ApiResponse.Error(response.message))
+                }
+            } catch (e: Exception) {
+                emit(ApiResponse.Error(e.message.toString()))
+                Timber.e(e)
+            }
+        }.flowOn(Dispatchers.IO)
+
     fun getBorrowedBooksById(userId: Int): Flow<ApiResponse<List<DataResponseItem>>> =
         flow {
             try {

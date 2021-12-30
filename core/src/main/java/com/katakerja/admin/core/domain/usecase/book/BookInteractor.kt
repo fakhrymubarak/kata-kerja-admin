@@ -10,6 +10,22 @@ import javax.inject.Inject
 
 class BookInteractor @Inject constructor(private val mBookRepository: BookRepository) :
     BookUseCase {
+    override fun addBook(
+        authToken: String, isbn: String, title: String, author: String, imgCover: String,
+        releaseYear: Int, publisher: String, category: String, stock: Int, description: String
+    ): Flow<Resource<Nothing>> = mBookRepository.addBook(
+        authToken = authToken,
+        isbn = isbn,
+        title = title,
+        author = author,
+        imgCover = imgCover,
+        releaseYear = releaseYear,
+        publisher = publisher,
+        category = category,
+        stock = stock,
+        description = description,
+    )
+
     override fun getBorrowedBooksById(idUser: Int): Flow<Resource<List<BorrowedBook>>> =
         mBookRepository.getBorrowedBooksById(idUser)
 
