@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.katakerja.admin">
+
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:name="com.katakerja.admin.KataKerjaApps"
+        android:name=".KataKerjaApps"
         android:allowBackup="true"
         android:fullBackupOnly="true"
         android:icon="@mipmap/ic_launcher"
@@ -14,19 +15,22 @@
         android:theme="@style/Theme.KataKerjaApps"
         android:usesCleartextTraffic="true">
         <activity
-            android:name="com.katakerja.admin.ui.login.LoginActivity"
+            android:name=".ui.dashboard.book.add.AddBookActivity"
             android:exported="false" />
         <activity
-            android:name="com.katakerja.admin.ui.profile.ProfileActivity"
+            android:name=".ui.login.LoginActivity"
             android:exported="false" />
         <activity
-            android:name="com.katakerja.admin.ui.dashboard.book.details.BookDetailsActivity"
+            android:name=".ui.profile.ProfileActivity"
             android:exported="false" />
         <activity
-            android:name="com.katakerja.admin.ui.dashboard.MainActivity"
+            android:name=".ui.dashboard.book.details.BookDetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.dashboard.MainActivity"
             android:exported="true" />
         <activity
-            android:name="com.katakerja.admin.ui.splash.SplashScreenActivity"
+            android:name=".ui.splash.SplashScreenActivity"
             android:exported="true"
             android:theme="@style/SplashTheme">
             <intent-filter>

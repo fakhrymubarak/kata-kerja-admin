@@ -39,7 +39,7 @@ class ItemBookWishlistAdapter(private val dataSet: List<Book>) :
                 tvAuthor.text = data.author
                 tvPublisher.text = data.publisher
                 tvYearReleased.text = data.releaseYear
-                tvStock.text = tvStock.context.getString(R.string.stock, data.stock)
+                tvStock.text = tvStock.context.getString(R.string.stock_ready, data.stock)
             }
             itemView.setOnClickListener {
                 onItemClick?.invoke(dataSet[layoutPosition])

@@ -95,7 +95,7 @@
             style="@style/TextStyles.PoppinsSmall"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="@string/stock"
+            android:text="@string/stock_ready"
             android:textColor="@color/blue"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@id/cv_cover"

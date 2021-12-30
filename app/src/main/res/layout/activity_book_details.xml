@@ -52,7 +52,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:text="@string/detail_buku"
+            android:text="@string/book_details"
             app:layout_constraintBottom_toBottomOf="@+id/btn_detail_back"
             app:layout_constraintStart_toEndOf="@+id/btn_detail_back"
             app:layout_constraintTop_toTopOf="@+id/btn_detail_back" />

@@ -19,7 +19,7 @@
     <string name="title_book">Book</string>
     <string name="title_wishlist">Wishlist</string>
     <string name="title_unverified">Unverified</string>
-t
+    t
     <!--  HOME  -->
     <string name="hello">Hello,</string>
     <string name="has_read">Telah Dibaca</string>
@@ -34,8 +34,8 @@ t
     <string name="popular_books">Buku Popular</string>
     <string name="search_hint">Cari buku untuk dipinjam…</string>
     <string name="your_wishlist">Wishlist Kamu</string>
-    <string name="stock">Stok : %1$d buku</string>
-    <string name="detail_buku">Detail Buku</string>
+    <string name="stock_ready">Stok : %1$d buku</string>
+    <string name="book_details">Detail Buku</string>
     <string name="category">Kategori</string>
     <string name="year">Tahun</string>
     <string name="isbn">ISBN</string>
@@ -104,5 +104,10 @@ t
     <string name="please_login">Registrasi berhasil! Silakan login terlebih dahulu.</string>
     <string name="success_update">Success Update Data</string>
     <string name="not_staff">Ups! Kamu bukan staff!</string>
+    <string name="add_books">Tambah Buku</string>
+    <string name="author">Penulis</string>
+    <string name="release_year">Tahun Terbit</string>
+    <string name="description">Deskripsi</string>
+    <string name="stock">Stock</string>
 
 </resources>

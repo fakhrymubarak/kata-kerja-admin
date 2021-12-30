@@ -15,6 +15,7 @@ import com.katakerja.admin.core.data.Resource
 import com.katakerja.admin.core.domain.model.Book
 import com.katakerja.admin.core.utils.viewBinding
 import com.katakerja.admin.databinding.FragmentBookBinding
+import com.katakerja.admin.ui.dashboard.book.add.AddBookActivity
 import com.katakerja.admin.ui.dashboard.book.details.BookDetailsActivity
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -35,6 +36,10 @@ class BookFragment : Fragment(R.layout.fragment_book) {
 
         setCategoryOne(listCategory[0])
         setCategoryTwo(listCategory[1])
+
+        binding.btnAddBook.setOnClickListener {
+            intentTo(AddBookActivity::class.java)
+        }
     }
 
     private fun setItemLayout() {
@@ -164,7 +169,7 @@ class BookFragment : Fragment(R.layout.fragment_book) {
         binding.itemExplore.rvSecondCat.adapter = adapter
     }
 
-    private fun <T> intentTo(destination: Class<T>, idBook: Int?) {
+    private fun <T> intentTo(destination: Class<T>, idBook: Int? = null) {
         val intent = Intent(requireContext(), destination)
         if (idBook != null) intent.putExtra(BookDetailsActivity.EXTRA_ID_BOOK, idBook)
         startActivity(intent)
