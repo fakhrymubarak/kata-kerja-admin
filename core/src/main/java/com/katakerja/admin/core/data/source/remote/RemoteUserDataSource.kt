@@ -2,6 +2,7 @@ package com.katakerja.admin.core.data.source.remote
 
 import com.katakerja.admin.core.data.source.remote.network.ApiResponse
 import com.katakerja.admin.core.data.source.remote.network.UserApiService
+import com.katakerja.admin.core.data.source.remote.response.user.all.UserData
 import com.katakerja.admin.core.data.source.remote.response.user.details.UserDetailsData
 import com.katakerja.admin.core.data.source.remote.response.user.login.LoginData
 import com.katakerja.admin.core.data.source.remote.response.user.register.RegisterData
@@ -18,6 +19,21 @@ import javax.inject.Singleton
 
 @Singleton
 class RemoteUserDataSource @Inject constructor(private val userApiService: UserApiService) {
+    fun getAllUser(authToken: String): Flow<ApiResponse<List<UserData>>> =
+        flow {
+            try {
+                val response = userApiService.getAllUser(authToken)
+                if (response.success) {
+                    emit(ApiResponse.Success(response.pagingData.userData))
+                } else {
+                    emit(ApiResponse.Error(response.message))
+                }
+            } catch (e: Exception) {
+                emit(ApiResponse.Error(e.message.toString()))
+                Timber.e(e)
+            }
+        }.flowOn(Dispatchers.IO)
+
     fun getUserById(authToken: String, userId: Int): Flow<ApiResponse<UserDetailsData>> =
         flow {
             try {

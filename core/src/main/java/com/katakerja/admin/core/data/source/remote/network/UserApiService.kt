@@ -1,5 +1,6 @@
 package com.katakerja.admin.core.data.source.remote.network
 
+import com.katakerja.admin.core.data.source.remote.response.user.all.GetAllUsersResponse
 import com.katakerja.admin.core.data.source.remote.response.user.details.UserDetailsResponse
 import com.katakerja.admin.core.data.source.remote.response.user.login.LoginResponse
 import com.katakerja.admin.core.data.source.remote.response.user.register.RegisterResponse
@@ -7,6 +8,12 @@ import com.katakerja.admin.core.data.source.remote.response.user.update.UserUpda
 import retrofit2.http.*
 
 interface UserApiService {
+    /* All Users */
+    @GET("users/index")
+    suspend fun getAllUser(
+        @Header("Authorization") authToken: String,
+    ): GetAllUsersResponse
+
     /* Details User */
     @GET("users/show/{id}")
     suspend fun getUserById(

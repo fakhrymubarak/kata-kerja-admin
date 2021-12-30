@@ -26,9 +26,9 @@
 
     <fragment
         android:id="@+id/navigation_members"
-        android:name="com.katakerja.admin.ui.dashboard.wishlist.WishlistFragment"
+        android:name="com.katakerja.admin.ui.dashboard.wishlist.MembersFragment"
         android:label="@string/title_wishlist"
-        tools:layout="@layout/fragment_wishlist" />
+        tools:layout="@layout/fragment_members" />
 
     <fragment
         android:id="@+id/navigation_unverified"

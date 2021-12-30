@@ -10,6 +10,10 @@ import javax.inject.Inject
 
 class UserInteractor @Inject constructor(private val mIUserRepository: IUserRepository) :
     UserUseCase {
+
+    override fun getAllUser(authToken: String): Flow<Resource<List<User>>> =
+        mIUserRepository.getAllUser(authToken)
+
     override fun getUserById(authToken: String, userId: Int): Flow<Resource<User>> =
         mIUserRepository.getUserById(authToken, userId)
 

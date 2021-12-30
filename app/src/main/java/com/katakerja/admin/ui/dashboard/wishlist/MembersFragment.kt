@@ -7,36 +7,36 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.katakerja.admin.R
-import com.katakerja.admin.adapter.book.wishlist.ItemBookWishlistAdapter
+import com.katakerja.admin.adapter.book.wishlist.ItemListMembersAdapter
 import com.katakerja.admin.core.data.Resource
-import com.katakerja.admin.core.domain.model.Book
+import com.katakerja.admin.core.domain.model.User
 import com.katakerja.admin.core.utils.viewBinding
-import com.katakerja.admin.databinding.FragmentWishlistBinding
+import com.katakerja.admin.databinding.FragmentMembersBinding
 import com.katakerja.admin.ui.dashboard.book.details.BookDetailsActivity
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class WishlistFragment : Fragment(R.layout.fragment_wishlist) {
-    private val binding by viewBinding(FragmentWishlistBinding::bind)
-    private val viewModel: WishListViewModel by viewModels()
+class MembersFragment : Fragment(R.layout.fragment_members) {
+    private val binding by viewBinding(FragmentMembersBinding::bind)
+    private val viewModel: MembersViewModel by viewModels()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        viewModel.getUserId().observe(this, { userId ->
-            viewModel.getWishlistBooks(userId).observe(viewLifecycleOwner, { listBookResource ->
-                if (listBookResource != null) {
-                    when (listBookResource) {
+        viewModel.getAuthToken().observe(viewLifecycleOwner, { authToken ->
+            viewModel.getAllMembers(authToken).observe(viewLifecycleOwner, { listUserResource ->
+                if (listUserResource != null) {
+                    when (listUserResource) {
                         is Resource.Loading -> {
                             setListBookLoading(true)
                         }
                         is Resource.Success -> {
                             setListBookLoading(false)
-                            listBookResource.data?.let { listBook -> populateWishlistBook(listBook.map { it.bookData }) }
+                            listUserResource.data?.let { listUser -> populateWishlistUser(listUser.map { it }) }
                         }
                         is Resource.Error -> {
                             setListBookLoading(false)
                             Toast.makeText(
-                                requireContext(), listBookResource.message, Toast.LENGTH_SHORT
+                                requireContext(), listUserResource.message, Toast.LENGTH_SHORT
                             ).show()
                         }
                     }
@@ -45,7 +45,7 @@ class WishlistFragment : Fragment(R.layout.fragment_wishlist) {
         })
     }
 
-    private fun populateWishlistBook(listData: List<Book>) {
+    private fun populateWishlistUser(listData: List<User>) {
         if (listData.isEmpty()) {
             binding.animEmptyWishlist.visibility = View.VISIBLE
             binding.tvEmptyWishlist.visibility = View.VISIBLE
@@ -54,9 +54,10 @@ class WishlistFragment : Fragment(R.layout.fragment_wishlist) {
             binding.animEmptyWishlist.visibility = View.GONE
             binding.tvEmptyWishlist.visibility = View.GONE
             binding.rvWishlist.visibility = View.VISIBLE
-            val adapter = ItemBookWishlistAdapter(listData)
+            val adapter = ItemListMembersAdapter(listData)
             adapter.onItemClick = { selectedData ->
-                intentTo(BookDetailsActivity::class.java, selectedData.idBook)
+                Toast.makeText(requireContext(), selectedData.name, Toast.LENGTH_SHORT).show()
+//                intentTo(BookDetailsActivity::class.java, selectedData.idUser)
             }
             binding.rvWishlist.adapter = adapter
         }

@@ -1,12 +1,15 @@
 package com.katakerja.admin.core.domain.repository
 
 import com.katakerja.admin.core.data.Resource
+import com.katakerja.admin.core.data.source.remote.network.ApiResponse
+import com.katakerja.admin.core.data.source.remote.response.user.all.UserData
 import com.katakerja.admin.core.domain.model.Login
 import com.katakerja.admin.core.domain.model.Register
 import com.katakerja.admin.core.domain.model.User
 import kotlinx.coroutines.flow.Flow
 
 interface IUserRepository {
+    fun getAllUser(authToken: String): Flow<Resource<List<User>>>
     fun getUserById(authToken: String, userId: Int): Flow<Resource<User>>
     fun updateUserById(authToken: String, userId: Int): Flow<Resource<User>>
     fun postLogin(email: String, password: String): Flow<Resource<Login>>

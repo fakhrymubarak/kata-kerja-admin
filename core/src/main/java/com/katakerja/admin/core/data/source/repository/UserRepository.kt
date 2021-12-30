@@ -4,6 +4,7 @@ import com.katakerja.admin.core.data.Resource
 import com.katakerja.admin.core.data.source.local.LocalUserDataSource
 import com.katakerja.admin.core.data.source.remote.RemoteUserDataSource
 import com.katakerja.admin.core.data.source.remote.network.ApiResponse
+import com.katakerja.admin.core.data.source.remote.response.user.all.UserData
 import com.katakerja.admin.core.domain.model.Login
 import com.katakerja.admin.core.domain.model.Register
 import com.katakerja.admin.core.domain.model.User
@@ -24,6 +25,22 @@ class UserRepository @Inject constructor(
     private val remoteUserDataSource: RemoteUserDataSource,
     private val localUserDataSource: LocalUserDataSource,
 ) : IUserRepository {
+    override fun getAllUser(authToken: String): Flow<Resource<List<User>>> =
+        flow {
+            emit(Resource.Loading())
+            when (val apiResponse = remoteUserDataSource.getAllUser(authToken).first()) {
+                is ApiResponse.Success -> {
+                    val data = apiResponse.data.map{UserDataMapper.User.mapResponseToDomain(it)}
+                    emit(Resource.Success(data))
+                }
+                is ApiResponse.Error -> {
+                    emit(Resource.Error(apiResponse.errorMessage))
+                }
+                is ApiResponse.Empty -> {}
+
+            }
+        }
+
     override fun getUserById(authToken: String, userId: Int): Flow<Resource<User>> =
         flow {
             emit(Resource.Loading())

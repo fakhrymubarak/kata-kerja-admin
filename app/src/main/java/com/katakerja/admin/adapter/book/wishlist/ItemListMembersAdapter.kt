@@ -6,17 +6,17 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.katakerja.admin.R
-import com.katakerja.admin.core.domain.model.Book
-import com.katakerja.admin.databinding.ItemBookWishlistBinding
+import com.katakerja.admin.core.domain.model.User
+import com.katakerja.admin.databinding.ItemListMembersBinding
 import com.katakerja.admin.helper.Base64
 
-class ItemBookWishlistAdapter(private val dataSet: List<Book>) :
-    RecyclerView.Adapter<ItemBookWishlistAdapter.ViewHolder>() {
-    var onItemClick: ((Book) -> Unit)? = null
+class ItemListMembersAdapter(private val dataSet: List<User>) :
+    RecyclerView.Adapter<ItemListMembersAdapter.ViewHolder>() {
+    var onItemClick: ((User) -> Unit)? = null
 
     override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): ViewHolder = ViewHolder(
         LayoutInflater.from(viewGroup.context)
-            .inflate(R.layout.item_book_wishlist, viewGroup, false)
+            .inflate(R.layout.item_list_members, viewGroup, false)
     )
 
     override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
@@ -26,20 +26,18 @@ class ItemBookWishlistAdapter(private val dataSet: List<Book>) :
     override fun getItemCount() = dataSet.size
 
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val binding = ItemBookWishlistBinding.bind(view)
-        fun bind(data: Book) {
+        val binding = ItemListMembersBinding.bind(view)
+        fun bind(data: User) {
             binding.apply {
                 try {
-                    ivCover.load(Base64.decode(data.cover))
+                    ivProfilePicture.load(Base64.decode(data.avatar))
                 } catch (e: Exception) {
-                    ivCover.load(R.drawable.img_cover_default)
+                    ivProfilePicture.load(R.drawable.img_cover_default)
                 }
 
-                tvTitle.text = data.title
-                tvAuthor.text = data.author
-                tvPublisher.text = data.publisher
-                tvYearReleased.text = data.releaseYear
-                tvStock.text = tvStock.context.getString(R.string.stock_ready, data.stock)
+                tvName.text = data.name
+                tvEmail.text = data.email
+                tvRegDate.text = data.memberSince
             }
             itemView.setOnClickListener {
                 onItemClick?.invoke(dataSet[layoutPosition])

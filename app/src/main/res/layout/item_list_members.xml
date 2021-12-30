@@ -19,17 +19,17 @@
         android:padding="8dp">
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/cv_cover"
-            android:layout_width="75dp"
+            android:id="@+id/cv_profile_picture"
+            android:layout_width="80dp"
             android:layout_height="0dp"
             android:src="@drawable/ic_read_book"
-            app:cardCornerRadius="@dimen/radius_card"
-            app:layout_constraintDimensionRatio="13:19"
+            app:cardCornerRadius="100dp"
+            app:layout_constraintDimensionRatio="1:1"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
-                android:id="@+id/iv_cover"
+                android:id="@+id/iv_profile_picture"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:contentDescription="@string/cd_illustration"
@@ -38,7 +38,7 @@
         </androidx.cardview.widget.CardView>
 
         <TextView
-            android:id="@+id/tv_title"
+            android:id="@+id/tv_name"
             style="@style/TextStyles.PoppinsRegular.Black"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -47,60 +47,37 @@
             android:ellipsize="end"
             android:maxLines="2"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/cv_cover"
-            app:layout_constraintTop_toTopOf="@+id/cv_cover"
-            tools:text="Insecurity Is My Middle Name" />
+            app:layout_constraintStart_toEndOf="@+id/cv_profile_picture"
+            app:layout_constraintTop_toTopOf="@+id/cv_profile_picture"
+            tools:text="Jono" />
 
         <TextView
-            android:id="@+id/tv_author"
+            android:id="@+id/tv_email"
             style="@style/TextStyles.PoppinsSmall"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="8dp"
+            android:layout_marginTop="8dp"
             android:ellipsize="end"
             android:maxLines="1"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/cv_cover"
-            app:layout_constraintTop_toBottomOf="@+id/tv_title"
-            tools:text="Alvi Syahrin" />
+            app:layout_constraintStart_toEndOf="@+id/cv_profile_picture"
+            app:layout_constraintTop_toBottomOf="@+id/tv_name"
+            tools:text="jono@gmail.com" />
 
         <TextView
-            android:id="@+id/tv_publisher"
+            android:id="@+id/tv_reg_date"
             style="@style/TextStyles.PoppinsSmall"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="8dp"
+            android:layout_marginTop="8dp"
             android:ellipsize="end"
             android:maxLines="1"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/cv_cover"
-            app:layout_constraintTop_toBottomOf="@+id/tv_author"
-            tools:text="PT Gagas Media" />
-
-        <TextView
-            android:id="@+id/tv_year_released"
-            style="@style/TextStyles.PoppinsSmall"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="8dp"
-            android:ellipsize="end"
-            android:maxLines="1"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/cv_cover"
-            app:layout_constraintTop_toBottomOf="@+id/tv_publisher"
-            tools:text="2020" />
-
-        <TextView
-            android:id="@+id/tv_stock"
-            style="@style/TextStyles.PoppinsSmall"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="@string/stock_ready"
-            android:textColor="@color/blue"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="@id/cv_cover"
-            app:layout_constraintEnd_toEndOf="@+id/tv_title" />
-
+            app:layout_constraintStart_toEndOf="@+id/cv_profile_picture"
+            app:layout_constraintTop_toBottomOf="@+id/tv_email"
+            tools:text="Registration : 26/12/2020" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>
 

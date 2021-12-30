@@ -7,6 +7,7 @@ import com.katakerja.admin.core.domain.model.User
 import kotlinx.coroutines.flow.Flow
 
 interface  UserUseCase {
+    fun getAllUser(authToken: String): Flow<Resource<List<User>>>
     fun getUserById(authToken: String, userId: Int): Flow<Resource<User>>
     fun updateUserById(authToken: String, userId: Int): Flow<Resource<User>>
     fun postLogin(email: String, password: String): Flow<Resource<Login>>
